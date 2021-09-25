@@ -1,0 +1,18 @@
+<div class='display-4 p-1 text-center font-weight-bold text-dark mt-3' style='font-family: serif;'>
+  {{title}}
+</div>
+{{#if assignments}}
+  {{#each assignments}}
+  <div class="card border-dark m-3" id='posts' style="width: 25rem; display: inline-block;">
+    <div class="card-header fw-bold">{{title}}</div>
+    <div class="card-body">
+      <p class="card-title">Deadline: {{deadline}}</p>
+      <p>{{description}}</p>
+      <a href="/users/submission" class="btn btn-primary">Submit</a>
+    </div>
+  </div>
+  {{/each}}
+<br />
+{{else}}
+<h3>Log in bruh</h3>
+{{/if}}

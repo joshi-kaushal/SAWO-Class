@@ -1,0 +1,59 @@
+<div class='display-4 p-1 text-center font-weight-bold text-uppercase text-dark' style='font-family: serif;'>
+{{#if title}}
+{{title}}
+{{else}}
+Submit Your Assignment
+{{/if}}
+</div>
+
+<div class="rounded border border-dark mx-auto p-2 m-2 form-container form-container">
+  <form action="" method="POST" class="form-submission">
+    <div class="row g-3 mb-3">
+      <div class="col-md">
+        <div class="form-floating">
+          <input
+            type="text"
+            class="form-control"
+            id="firstname"
+            name="firstName" placeholder="placeholder" required
+          />
+          <label for="firstname" id="firstname">First Name</label>
+        </div>
+      </div>
+
+      <div class="col-md">
+        <div class="form-floating">
+          <input
+            type="text"
+            class="form-control"
+            id="lastname"
+            name="lastName" placeholder="placeholder" required
+          />
+          <label for="lastname" id="lastname">Last Name</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-floating mb-3">
+      <input type="url" class="form-control" id="github" name="github" placeholder="placeholder" />
+      <label for="github" id="github">GitHub Repo Link</label>
+    </div>
+    <div class="mb-3 form-floating">
+      <input type="url" class="form-control" id="deployed" name="deployed" placeholder="placeholder" />
+      <label for="deployed" id="deployed">Live Demo</label>
+    </div>
+    <div class="mb-3 form-floating">
+      <input class="form-control-lg" type="file" id="document" name='document' />
+    </div>
+    <div class="mb-3 form-floating">
+      <textarea
+        class="form-control"
+        placeholder="Leave a comment here"
+        id="floatingTextarea2"
+        style="height: 100px"
+      ></textarea>
+      <label for="floatingTextarea2">Comments</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>

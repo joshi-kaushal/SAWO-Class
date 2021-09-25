@@ -1,0 +1,25 @@
+{
+  "name": "sawo-labs",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "devstart": "nodemon ./bin/www",
+    "serverstart": "DEBUG=sawo-labs:* npm run devstart",
+    "lint": "eslint src/js"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "dateformat": "^5.0.1",
+    "debug": "~2.6.9",
+    "dotenv": "^10.0.0",
+    "express": "~4.16.1",
+    "express-handlebars": "^5.3.4",
+    "express-session": "^1.17.2",
+    "express-validator": "^6.12.1",
+    "hbs": "^4.1.2",
+    "http-errors": "~1.6.3",
+    "mongoose": "^6.0.7",
+    "morgan": "~1.9.1"
+  }
+}
