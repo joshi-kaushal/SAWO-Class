@@ -1,6 +1,6 @@
 require('dotenv').config()
 const { validationResult } = require('express-validator');
-
+const session = require('express-session')
 const Assignment = require('../models/assignment')
 const Submission = require('../models/submission')
 
@@ -13,7 +13,6 @@ exports.check_login = (req, res) => {
 // ? Logout Functionality
 exports.logout = (req, res) => {
     const payload = req.session.payload;
-    console.log(`req.session -> ${req}`);
     res.redirect('/')
 }
 
@@ -31,7 +30,7 @@ exports.assignment_get = (req, res) => {
 
 // ? (STUDENT) Uploads student submission in the DB
 exports.submission_post = (req, res, next) => {
-    const {firstName, lastName, github, deployed, document, description} = req.body
+    const {firstName, lastName, title, github, deployed, document, description} = req.body
 	const errors = validationResult(req)
 
     if(!errors.isEmpty()) {
@@ -39,12 +38,12 @@ exports.submission_post = (req, res, next) => {
 		return
 	}
 
-	let currentTime = Date()
-
+    const currentTime = new Date();
     const newSubmission = new Submission({
         firstName,
         lastName, 
         github,
+        title,
         deployed,
         document,
         description,
@@ -57,11 +56,13 @@ exports.submission_post = (req, res, next) => {
     })
 }
 
-// ? (ADMIN) Retrieves assignments to DB
+// ? (ADMIN) Retrieves assignments from DB
 exports.assignments_get = (req, res) => {
+
     Submission.find()
         .then((each) => {
-            res.render('view_submissions', {title: "Uploaded Assignments", submissions: each})
+            console.log(each.document);
+            res.render('view_submissions', {title: "Uploaded Assignments", submissions: each.reverse()})
         })
 }
 
@@ -89,7 +90,6 @@ exports.assignment_post = (req, res, next) => {
 
 // ? Admin Authentication
 exports.adminLogin_post = (req, res, next) => {
-  console.log(req.body);  
   const {username, password} = req.body
 
   if(username === process.env.ADMIN_USERNAME && password === process.env.ADMIN_PASSWORD) {

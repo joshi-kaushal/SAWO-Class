@@ -46,8 +46,9 @@ a {
   margin: 3rem;
   width: 30rem;
   height: 12rem;
-  background-color: #85ffbd;
-  background-image: linear-gradient(45deg, #fffb7d 0%, #85ffbd 100%);
+  background-color: #FAACA8;
+background-image: linear-gradient(19deg, #FBBBBB 0%, #DDD6F3 100%);
+
 }
 
 .card > a {

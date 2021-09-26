@@ -12,6 +12,8 @@ var usersRouter = require("./routes/users");
 var adminRouter = require("./routes/admin");
 
 var app = express();
+app.use(compression()); //Compress all routes
+app.use(helmet()); // protection against well known vulnerabilities
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
