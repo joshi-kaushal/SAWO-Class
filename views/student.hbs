@@ -21,5 +21,11 @@
   {{/each}}
   <br />
 {{else}}
-  <h3>Log in bruh</h3>
+  <h3>Log in needed</h3>
 {{/if}}
+
+<script>
+  const payload = localStorage.getItem('payload');
+  const lo = document.getElementById('logout')
+  if(payload) { lo.style.display = "block"}
+</script>

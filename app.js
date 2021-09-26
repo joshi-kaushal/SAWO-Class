@@ -5,8 +5,8 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 var mongoose = require("mongoose");
 var session = require("express-session");
-var compression = require("compression");
-var helmet = require("helmet");
+// var compression = require("compression");
+// var helmet = require("helmet");
 require("dotenv").config();
 
 var indexRouter = require("./routes/index");
@@ -14,8 +14,8 @@ var usersRouter = require("./routes/users");
 var adminRouter = require("./routes/admin");
 
 var app = express();
-app.use(compression()); //Compress all routes
-app.use(helmet()); // protection against well known vulnerabilities
+// app.use(compression()); //Compress all routes
+// app.use(helmet()); // protection against well known vulnerabilities
 
 // handlebar engine setup
 app.set("views", path.join(__dirname, "views"));

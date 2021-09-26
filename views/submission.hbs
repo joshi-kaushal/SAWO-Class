@@ -94,3 +94,9 @@
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 </div>
+
+<script>
+  const payload = localStorage.getItem('payload');
+  const lo = document.getElementById('logout')
+  if(payload) { lo.style.display = "block"}
+</script>

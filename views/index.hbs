@@ -13,3 +13,9 @@
     <a href="/admin/login">Admin Panel</a>
   </div>
 </div>
+
+<script>
+  const payload = localStorage.getItem('payload');
+  const lo = document.getElementById('logout')
+  if(payload) { lo.style.display = "block"}
+</script>

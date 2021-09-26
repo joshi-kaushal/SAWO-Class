@@ -1,19 +1,17 @@
 require('dotenv').config()
 const { validationResult } = require('express-validator');
-const session = require('express-session')
 const Assignment = require('../models/assignment')
-const Submission = require('../models/submission')
+const Submission = require('../models/submission');
 
 // ? Checks if user is loggeg in (SAWO Payload)
 exports.check_login = (req, res) => {
-    const payload = req.session.payload;
+    const payload = localStorage.getItem('payload');
+    console.log(payload)
     console.log(req.session.payload);
 }
 
 // ? Logout Functionality
 exports.logout = (req, res) => {
-    const payload = req.session.payload;
-    alert('You Have Logged Out!')
     res.redirect('/')
 }
 

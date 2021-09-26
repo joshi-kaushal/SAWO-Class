@@ -8,6 +8,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="/stylesheets/style.css" />
+    <script src="https://websdk.sawolabs.com/sawo.min.js"></script>
   </head>
   <body>
     <div class="container-fluid">
@@ -41,7 +42,14 @@
               <a class="nav-link active" href="/admin/login">Admin</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="/logout">Logout</a>
+              <a
+                id="logout"
+                class="nav-link active"
+                onclick="logout()"
+                href="/"
+                style="display: none;"
+              >Logout</a>
+              {{! <button class="nav-link active" onclick="logout()">Logout</button> }}
             </li>
           </ul>
 
@@ -53,12 +61,20 @@
     <footer class="fixed-bottom">
       <p class="font-weight-bold text-center m-0 p-0">Develpped by Kaushal Joshi</p>
     </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+      crossorigin="anonymous"
+    >
+    </script>
+
+    <script>
+      const payload = localStorage.getItem('payload'); const lo =
+      document.getElementById('logout') if(payload) { lo.style.display =
+      "block"} function logout() { localStorage.removeItem("payload");
+      window.location.href('/') }
+    </script>
+
   </body>
-
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
-    crossorigin="anonymous"
-  ></script>
-
 </html>
