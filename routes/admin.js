@@ -7,13 +7,13 @@ const controller = require('../controller/controller')
 // ? route GET / ('/admin')
 // ? @desc 'admin home'
 router.get('/', (req, res) => {
-    res.render('admin', {title: "Admin"})
+  res.render('admin', { title: "Admin" })
 })
 
 // ? route GET /login
 // ? @desc 'admin login'
 router.get('/login', (req, res) => {
-    res.render('admin-login', {title: "Admin Login!"})
+  res.render('admin-login', { title: "Admin Login!" })
 })
 
 // ? route POST /login

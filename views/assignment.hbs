@@ -1,9 +1,12 @@
-<div class='display-4 p-1 text-center font-weight-bold text-uppercase text-dark' style='font-family: serif;'>
-{{#if title}}
-{{title}}
-{{else}}
-Submit Your Assignment
-{{/if}}
+<div
+  class="display-4 p-1 text-center font-weight-bold text-uppercase text-dark"
+  style="font-family: serif;"
+>
+  {{#if title}}
+    {{title}}
+  {{else}}
+    Submit Your Assignment
+  {{/if}}
 </div>
 
 <div class="rounded border border-dark mx-auto p-2 m-2 form-container">
@@ -15,7 +18,7 @@ Submit Your Assignment
         class="form-control"
         id="title"
         name="title"
-          placeholder="Assignment Title"
+        placeholder="Assignment Title"
         required
       />
       <label for="title" id="github">Assignment Title</label>
@@ -27,12 +30,19 @@ Submit Your Assignment
         placeholder="Leave a comment here"
         id="description"
         name="description"
-        style="height: 100px" required
+        style="height: 100px"
+        required
       ></textarea>
       <label for="description">Description</label>
     </div>
     <div class="mb-3 form-floating">
-      <input id="deadline" type="date" name="deadline" class="form-control-lg"  required/>
+      <input
+        id="deadline"
+        type="date"
+        name="deadline"
+        class="form-control-lg"
+        required
+      />
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>

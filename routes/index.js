@@ -5,7 +5,7 @@ const controller = require('../controller/controller')
 
 /* GET home page. */
 router.get("/", (req, res) => {
-  res.render('index', {title: "SAWO Class Portal"})
+  res.render('index', { title: "SAWO Class Portal" })
 });
 
 router.get("/login", (req, res) => {
@@ -28,14 +28,14 @@ router.get('/status', (req, res) => {
     "name": "SAWO Class API",
     "description": "Project Submission Platform developed using Express and MongoDB",
     "stauts": "Working OK",
-    "routes" : [
+    "routes": [
       {
         "/": {
           "index": "Home Page",
           "login": "Log-in using SAWO API",
           "logout": "Log-out",
           "successfull": "Redirecting after successfull submission!"
-        }, 
+        },
         "/users": {
           "users": "Home Page",
           "submission": {
@@ -58,7 +58,7 @@ router.get('/status', (req, res) => {
       }
     ]
   }
-  res.send({response})
+  res.send({ response })
 })
 
 module.exports = router;

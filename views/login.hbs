@@ -1,9 +1,10 @@
-
-
 <body>
-<div class='display-4 p-1 text-center font-weight-bold text-dark mt-3' style='font-family: serif;'>
-  {{title}}
-</div>
+  <div
+    class="display-4 p-1 text-center font-weight-bold text-dark mt-3"
+    style="font-family: serif;"
+  >
+    {{title}}
+  </div>
   <div
     id="sawo-container"
     style="height: 300px; width: 300px; margin: 0 auto; background-color: #85ffbd; background-image: linear-gradient(45deg, #85ffbd 0%, #fffb7d 100%);"
@@ -12,21 +13,12 @@
 
   <script src="https://websdk.sawolabs.com/sawo.min.js"></script>
   <script>
-    const payload = sessionStorage.getItem("payload");
-    if (payload) {
-      window.location.href = "/users";
-    }
-    var config = {
-      containerID: "sawo-container",
-      identifierType: "email",
-      apiKey: "3d8c08a5-cb17-464e-8ab3-b7ef9e56436f",
-      onSuccess: 
-        (payload) => {
-          sessionStorage.setItem("payload",
-          JSON.stringify(payload));
-          window.location.href = "/users";
-        },
-      };
-      var sawo = new Sawo(config); sawo.showForm();
+    const payload = sessionStorage.getItem("payload"); if (payload) {
+    window.location.href = "/users"; } var config = { containerID:
+    "sawo-container", identifierType: "email", apiKey:
+    "3d8c08a5-cb17-464e-8ab3-b7ef9e56436f", onSuccess: (payload) => {
+    sessionStorage.setItem("payload", JSON.stringify(payload));
+    window.location.href = "/users"; }, }; var sawo = new Sawo(config);
+    sawo.showForm();
   </script>
 </body>

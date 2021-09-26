@@ -1,29 +1,47 @@
-   
-<div class='display-4 p-1 text-center font-weight-bold text-uppercase text-dark' style='font-family: serif;'>
-{{title}}
+<div
+  class="display-4 p-1 text-center font-weight-bold text-uppercase text-dark"
+  style="font-family: serif;"
+>
+  {{title}}
 </div>
 
 <div class="container">
-{{#if submissions}}
-  {{#each submissions}}
-<div class="card border-primary mb-3" style="width: 20rem; height: 15rem; display: inline-block;">
-    <div class="card-header bg-transparent border-primary">{{firstName}} {{lastName}}</div>
+  {{#if submissions}}
+    {{#each submissions}}
+      <div
+        class="card border-primary mb-3"
+        style="width: 20rem; height: 15rem; display: inline-block;"
+      >
+        <div class="card-header bg-transparent border-primary">{{firstName}}
+          {{lastName}}</div>
         <div class="card-body text-dark">
-            <h5 class="card-title">{{title}}</h5>
-            <p class="card-text">{{description}}</p>
+          <h5 class="card-title">{{title}}</h5>
+          <p class="card-text">{{description}}</p>
         </div>
-    <div class="card-footer bg-transparent border-primary">
+        <div class="card-footer bg-transparent border-primary">
 
-        <a class='btn btn-outline-primary text-dark' href="#" target="_blank" ><u>{{document}}</u></a>
-    </div>
-    <div class="card-footer bg-transparent border-primary">
-        <a class='btn btn-outline-primary text-dark' href={{github}} target="_blank"><u>Github</u></a>
-        <a class='btn btn-outline-primary text-dark' href={{deployed}} target="_blank" ><u>Live Demo</u></a>
-    </div>
-</div>
-  {{/each}}
-<br />
-{{else}}
-<h3>There are no active submissions!</h3>
-{{/if}}
+          <a
+            class="btn btn-outline-primary text-dark"
+            href="#"
+            target="_blank"
+          ><u>{{document}}</u></a>
+        </div>
+        <div class="card-footer bg-transparent border-primary">
+          <a
+            class="btn btn-outline-primary text-dark"
+            href={{github}}
+            target="_blank"
+          ><u>Github</u></a>
+          <a
+            class="btn btn-outline-primary text-dark"
+            href={{deployed}}
+            target="_blank"
+          ><u>Live Demo</u></a>
+        </div>
+      </div>
+    {{/each}}
+    <br />
+  {{else}}
+    <h3>There are no active submissions!</h3>
+  {{/if}}
 </div>

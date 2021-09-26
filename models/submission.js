@@ -12,5 +12,4 @@ const SubmissionSchema = new Schema({
   timestamp: { type: Date, required: true },
 });
 
-
 module.exports = mongoose.model("Submission", SubmissionSchema);

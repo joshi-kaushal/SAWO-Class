@@ -5,6 +5,8 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 var mongoose = require("mongoose");
 var session = require("express-session");
+var compression = require("compression");
+var helmet = require("helmet");
 require("dotenv").config();
 
 var indexRouter = require("./routes/index");
@@ -15,7 +17,7 @@ var app = express();
 app.use(compression()); //Compress all routes
 app.use(helmet()); // protection against well known vulnerabilities
 
-// view engine setup
+// handlebar engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "hbs");
 
@@ -51,19 +53,11 @@ app.use(function (err, req, res, next) {
 });
 
 // MongoDB Connection
-//Set up default mongoose connection
 var mongoDB = process.env.MONGODB_URL;
-mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true });
-//Get the default connection
-var db = mongoose.connection;
-//Bind connection to error event (to get notification of connection errors)
-db.on("error", console.error.bind(console, "MongoDB connection error:"));
+mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true }); //Set up default mongoose connection
+
+var db = mongoose.connection; //Get the default connection
+
+db.on("error", console.error.bind(console, "MongoDB connection error:")); //Bind connection to error event
 
 module.exports = app;
-
-/* 
-  ! SAWO payload
-  ! JS Date
-  ! Binary PDF File 
-  ! Login background
-*/
