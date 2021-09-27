@@ -49,7 +49,7 @@
                 href="/"
                 style="display: none;"
               >Logout</a>
-              {{! <button class="nav-link active" onclick="logout()">Logout</button> }}
+              {{!-- <div class="nav-link active" onclick="logout()">Logout</div> --}}
             </li>
           </ul>
 
@@ -70,10 +70,18 @@
     </script>
 
     <script>
-      const payload = localStorage.getItem('payload'); const lo =
-      document.getElementById('logout') if(payload) { lo.style.display =
-      "block"} function logout() { localStorage.removeItem("payload");
-      window.location.href('/') }
+      const payload = localStorage.getItem('payload');
+      const lo =  document.getElementById('logout')
+      
+      if(payload) {
+        lo.style.display =
+      "block"
+      }
+      
+      function logout() {
+        localStorage.removeItem("payload");
+        window.location.href('/')
+      }
     </script>
 
   </body>
